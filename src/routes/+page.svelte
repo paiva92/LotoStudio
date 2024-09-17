@@ -1,59 +1,50 @@
 <script>
-	import Counter from './Counter.svelte';
-	import welcome from '$lib/images/svelte-welcome.webp';
-	import welcome_fallback from '$lib/images/svelte-welcome.png';
+	import { getImageUrl } from '$utils/getImageUrl.js';
+	let image = getImageUrl('loto-studio-camara.svg');
 </script>
 
 <svelte:head>
 	<title>Home</title>
-	<meta name="description" content="Svelte demo app" />
 </svelte:head>
-
-<section>
-	<h1>
-		<span class="welcome">
-			<picture>
-				<source srcset={welcome} type="image/webp" />
-				<img src={welcome_fallback} alt="Welcome" />
-			</picture>
-		</span>
-
-		to your new<br />SvelteKit app
-	</h1>
-
-	<h2>
-		try editing <strong>src/routes/+page.svelte</strong>
-	</h2>
-
-	<Counter />
-</section>
+<main>
+	<div class="container">
+		<div class="title">
+			<h1 class="animate delay-2">Loto Studio</h1>
+			<h2 class="animate delay-3">Fotografía Materna Infantil</h2>
+		</div>
+		<img class="animate" src={getImageUrl('loto-sutdio-principal.png')} alt="test" />
+	</div>
+</main>
 
 <style>
-	section {
+	.container {
 		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		flex: 0.6;
-	}
-
-	h1 {
+		height: calc(100vh - 5px);
 		width: 100%;
-	}
-
-	.welcome {
-		display: block;
+		overflow: hidden;
 		position: relative;
-		width: 100%;
-		height: 0;
-		padding: 0 0 calc(100% * 495 / 2048) 0;
 	}
-
-	.welcome img {
+	img {
 		position: absolute;
-		width: 100%;
-		height: 100%;
-		top: 0;
-		display: block;
+		height: 140vh;
+		object-fit: contain;
+		top: -60px;
+		right: 10vw;
+	}
+	.title {
+		margin-top: 10vh;
+		margin-left: 20%;
+
+		h1 {
+			font-size: 12vh;
+			color: rgb(190, 217, 208);
+			text-shadow: 0px 2px 6px rgba(255, 255, 255, 0.234);
+			margin-bottom: 10px;
+		}
+		h2 {
+			font-size: 5vh;
+			color: var(--color-theme-1);
+			margin: 0;
+		}
 	}
 </style>

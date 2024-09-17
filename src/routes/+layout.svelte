@@ -1,53 +1,57 @@
 <script>
-	import Header from './Header.svelte';
 	import '../app.css';
+	import { base } from '$app/paths';
+	import { getImageUrl } from '$utils/getImageUrl.js';
 </script>
 
-<div class="app">
-	<Header />
+<nav class="animate delay-1">
+	<img src={getImageUrl('loto-studio-camara.svg')} width="40px" alt="loto-studio-logo"/>
+	<span>Loto Studio</span>
+	<a href="{base}/">Home</a>
+	<a href="{base}/sessions">Sesiones</a>
+	<a href="{base}/about">Sobre mi</a>
+	<a href="{base}/contact">Contacto</a>
+</nav>
 
-	<main>
-		<slot />
-	</main>
+<slot />
 
-	<footer>
-		<p>visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to learn SvelteKit</p>
-	</footer>
-</div>
+<button class="animate delay-1"><img src={getImageUrl('WhatsApp_icon.png')} width="40px" alt="WhatsApp"/></button>
 
 <style>
-	.app {
-		display: flex;
-		flex-direction: column;
-		min-height: 100vh;
+	span {
+		color: white;
 	}
-
-	main {
-		flex: 1;
-		display: flex;
-		flex-direction: column;
-		padding: 1rem;
+	nav {
+		display: grid;
+		grid-template-columns: 40px 3fr repeat(4, 120px) 20px;
+		gap: 1rem;
 		width: 100%;
-		max-width: 64rem;
-		margin: 0 auto;
-		box-sizing: border-box;
+		padding: 20px;
+		position: fixed;
+		top: 0;
+		z-index: 9999;
+
+		img {
+			filter: invert(1);
+			margin-top: -5px;
+		}
 	}
 
-	footer {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		padding: 12px;
-	}
-
-	footer a {
-		font-weight: bold;
-	}
-
-	@media (min-width: 480px) {
-		footer {
-			padding: 12px 0;
+	button {
+		position: fixed;
+		bottom: 10px;
+		right: 10px;
+		z-index: 9999;
+		background: none;
+		color: inherit;
+		border: none;
+		padding: 0;
+		font: inherit;
+		cursor: pointer;
+		outline: inherit;
+		transition: scale 0.3s ease-in;
+		&:hover{
+			scale: 1.1
 		}
 	}
 </style>
