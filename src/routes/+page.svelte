@@ -1,12 +1,15 @@
 <script>
 	import { getImageUrl } from '$utils/getImageUrl.js';
-	let image = getImageUrl('loto-studio-camara.svg');
 </script>
 
 <svelte:head>
 	<title>Home</title>
 </svelte:head>
-<main>
+<main id="home">
+	<div class="name animate delay-4">
+		<span>Sofía Zannier</span>
+		<svg class="icon-click" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 12h8"/><path d="m12 16 4-4-4-4"/></svg>
+	</div>
 	<div class="container">
 		<div class="title">
 			<h1 class="animate delay-2">Loto Studio</h1>
@@ -45,6 +48,27 @@
 			font-size: 5vh;
 			color: var(--color-theme-1);
 			margin: 0;
+		}
+	}
+	div.name {
+		display: flex;
+		position: absolute;
+		bottom: 15vh;
+		background-color: azure;
+		height: 10vh;
+		width: 75vw;
+		color: var(--color-bg-1);
+		font-size: 5vh;
+		align-items: center;
+		font-weight: bold;
+
+		span {
+			margin-left: 20vw;
+			margin-right: 5vw;
+		}
+		svg{
+			height: 5vh;
+			z-index: 9999;
 		}
 	}
 </style>

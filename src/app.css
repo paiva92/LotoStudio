@@ -9,7 +9,7 @@
 	--color-bg-2: hsl(153, 60%, 3%);
 	--color-theme-1: #eef1d5;
 	--color-theme-2: #ffffff;
-	--color-text: rgba(0, 0, 0, 0.7);
+	--color-text: rgba(255, 255, 255, 0.856);
 	--column-width: 42rem;
 	--column-margin-top: 4rem;
 	font-family: var(--font-body);
@@ -18,17 +18,76 @@
 
 body {
 	overflow-y: scroll;
-	min-height: 100vh;
 	margin: 0;
 	background-attachment: fixed;
-	background-color: var(--color-bg-1);
+	/* background-color: var(--color-bg-1);
 	background-size: 100vw 100vh;
 	background-image: radial-gradient(
 			50% 50% at 50% 50%,
-			rgba(255, 255, 255, 0.18) 0%,
-			rgba(255, 255, 255, 0) 100%
+			rgba(244, 236, 227, 0.956) 0%,
+			rgba(213, 203, 182, 0.835) 100%
 		),
-		linear-gradient(180deg, var(--color-bg-0) 0%, var(--color-bg-1) 15%, var(--color-bg-2) 50%);
+		linear-gradient(180deg, var(--color-bg-0) 0%, var(--color-bg-1) 15%, var(--color-bg-2) 50%); */
+	background:
+		radial-gradient(
+			50% 50% at 100% 0,
+			#c7bd9f 0% 5%,
+			#c7c19f 6% 15%,
+			#c7bd9f 16% 25%,
+			#c7c19f 26% 35%,
+			#c7bd9f 36% 45%,
+			#c7c19f 46% 55%,
+			#c7bd9f 56% 65%,
+			#c7c19f 66% 75%,
+			#c7bd9f 76% 85%,
+			#c7c19f 86% 95%,
+			#0000 96%
+		),
+		radial-gradient(
+			50% 50% at 0 100%,
+			#c7bd9f 0% 5%,
+			#c7c19f 6% 15%,
+			#c7bd9f 16% 25%,
+			#c7c19f 26% 35%,
+			#c7bd9f 36% 45%,
+			#c7c19f 46% 55%,
+			#c7bd9f 56% 65%,
+			#c7c19f 66% 75%,
+			#c7bd9f 76% 85%,
+			#c7c19f 86% 95%,
+			#0000 96%
+		),
+		radial-gradient(
+			50% 50%,
+			#c7bd9f 0% 5%,
+			#c7c19f 6% 15%,
+			#c7bd9f 16% 25%,
+			#c7c19f 26% 35%,
+			#c7bd9f 36% 45%,
+			#c7c19f 46% 55%,
+			#c7bd9f 56% 65%,
+			#c7c19f 66% 75%,
+			#c7bd9f 76% 85%,
+			#c7c19f 86% 95%,
+			#0000 96%
+		),
+		radial-gradient(
+				50% 50%,
+				#c7bd9f 0% 5%,
+				#c7c19f 6% 15%,
+				#c7bd9f 16% 25%,
+				#c7c19f 26% 35%,
+				#c7bd9f 36% 45%,
+				#c7c19f 46% 55%,
+				#c7bd9f 56% 65%,
+				#c7c19f 66% 75%,
+				#c7bd9f 76% 85%,
+				#c7c19f 86% 95%,
+				#0000 96%
+			)
+			25px 25px;
+	background-size: 50px 50px;
+	background-color: #c7bd9f;
 }
 
 h1,
@@ -42,9 +101,9 @@ p {
 }
 
 a {
-	color: var(--color-theme-1);
+	color: var(--color-theme-2);
 	text-decoration: none;
-	transition: scale 0.5s ease-out;
+	transition: scale 0.3s ease-in-out;
 }
 
 a:hover {
@@ -135,4 +194,24 @@ button:focus:not(:focus-visible) {
 .delay-3 {
 	animation-delay: 0.8s;
 	animation-duration: 1.5s;
+}
+.delay-4 {
+	animation-delay: 1s;
+	animation-duration: 1.5s;
+}
+
+.icon-click {
+	cursor: pointer;
+	transition: scale 0.3s ease-in-out;
+}
+
+.icon-click:hover {
+	scale: 1.1;
+}
+
+.dancing {
+	font-family: 'Dancing Script', cursive;
+	font-optical-sizing: auto;
+	font-weight: 800;
+	font-style: normal;
 }
